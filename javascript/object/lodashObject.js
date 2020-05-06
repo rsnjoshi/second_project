@@ -44,4 +44,29 @@ console.log(_.findKey(obj3, (obj)=>{
     return obj.age < 20;
 }))
 
+obj3={
+    a:{
+        b:{
+            c:{
+                d:{
+                    e:'hehe'
+                }
+            }
+        }
+    }
+}
 
+console.log(_.get(obj3, 'a.b.c.d.e'));
+
+var newObj = new obj1('ram', 'nepal')
+
+console.log(_.keys(newObj));
+console.log(_.keysIn(newObj));
+
+console.log(_.mapKeys(newObj, (value, key)=>{
+    return value + key;
+}))
+
+console.log(_.mapValues(newObj, (value, key)=>{
+    return value + key;
+}))
