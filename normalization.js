@@ -36,8 +36,21 @@ function maleFemale(payload) {
         (accumulator[current.gender] || (accumulator[current.gender] = [])).push(current);
         return accumulator;
     }, {})
-
-    console.log(obj);
+    eyeColor(obj);
+    
 }
 
 
+function eyeColor(payload){
+    function genderAndColor(gender, eye_color){
+        this.gender = gender;
+        this.eye_color = eye_color;
+    }
+    _.forEach(payload, (value, key)=>{
+       var obj = _.reduce(value, (accumulator, current)=>{
+            (accumulator[current.eyeColor] || (accumulator[current.eyeColor] = [])).push(current);
+            return accumulator;
+        }, {});
+        console.log(new genderAndColor(key, obj));
+    })
+}
